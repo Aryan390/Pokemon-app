@@ -1,0 +1,105 @@
+// fonts 
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Jura:wght@600&display=swap');
+
+// mixins for flex box
+@mixin flexCenter($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+// mixin for after and before classes for the dark background
+@mixin dark {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5)
+}
+
+
+// all the partial scss files
+@import './variables';
+@import './resets';
+@import './types';
+@import './cardflip';
+@import './button';
+@import './input';
+
+body{
+  background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+.poke-banner{
+  @include flexCenter(column);
+  height: 50vh;
+  background: url('../../img/thumb-1920-592678.jpg') no-repeat center center/cover;
+  position: relative;
+  z-index: 1;
+  border-bottom: 10px solid rgb(149, 233, 149);
+
+  img{
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  &::before{
+    @include dark;
+  } 
+}
+
+.search-box{
+  height: 15vh;
+  background: linear-gradient(20deg, rgb(206, 23, 17) 50%, rgb(28, 70, 119) 50%);
+  color: white;
+}
+
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: $light-color;
+  padding: 1rem;
+  @include flexCenter(column);
+
+  .sorting-options{
+    height: 50px;
+    width: 100%;
+    margin: 1.7rem 0;
+    @include flexCenter(row);
+    justify-content: space-around;
+
+    .sort{
+      width: 40%;
+      padding:.5rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      background: $light-color;
+      color: white;
+      box-shadow: inset 0 0 50px rgba(255,255,255,0.52 ),
+                  0 0 20px 5px rgba(150, 150, 150, 0.5);
+      cursor: pointer;
+
+      &:focus{
+        outline:none;
+      }
+    }
+  }
+  
+  // grid container for all the pokemon cards
+  .pokemon{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 15px;
+  }
+}

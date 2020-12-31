@@ -1,0 +1,88 @@
+.pokemon-container{
+  height: 350px;
+  width: 300px;
+  position: relative;
+  
+  // pokemon card styling
+  .poke-card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover{
+      transform: rotateY(180deg);
+    }
+  }
+
+  // front and back faces of the card
+  .front-content
+  ,.back-content{
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.1);
+    border: rgb(160, 160, 160) 2px solid;
+    background: #757F9A;  /* fallback for old browsers */
+    background: #E55D87;  /* fallback for old browsers */
+    background: #108dc7;  /* fallback for old browsers */
+
+    background: linear-gradient(45deg ,#8a99c5 50%, #ad4264 50%);
+  }
+
+  .front-content{
+    @include flexCenter(column);
+
+    .image-section{
+      text-align: center;
+      margin-bottom: 1rem;
+      @include flexCenter(column);
+
+      img{
+        height: 180px;
+        max-width: 180px;
+        background: #43cea2;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(right, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border-radius: 50%;
+        padding:1rem;
+        margin-bottom: .5rem;
+        display: inline-block;
+      }
+
+      p{
+        font-size: 1.2rem;
+      }
+    }
+
+  }
+
+  .back-content{
+    transform: rotateY(180deg);
+    background: rgb(197, 197, 197);
+
+
+    .stats-list{
+      height: 100%;
+      width: 100%;
+      @include flexCenter(column);
+      background: rgb(190, 190, 207);
+      background: linear-gradient(45deg, #ad4264 50%, #8a99c5 50%);
+
+      .stat-value{
+        @include flexCenter(row);
+        justify-content: space-between;
+        width: 100%;
+        padding: .8rem 1.5rem;
+        font-size: 1.1rem;
+        font-weight: bolder;
+      }
+    }
+  }
+
+}

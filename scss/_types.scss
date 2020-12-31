@@ -1,0 +1,82 @@
+.type{
+  border: none;
+  padding: 7px;
+  border-radius: 10px;
+
+  &:focus{
+    outline: none;
+  }
+
+  &.normal{
+    background: rgb(158, 158, 158);
+  }
+
+  &.grass{
+    background: rgb(0, 255, 0);
+  }
+
+  &.poison{
+    background: rgb(160, 3, 160);
+  }
+
+  &.fire{
+    background: rgb(224, 45, 45);
+  }
+
+  &.water{
+    background: rgb(3, 124, 238);
+  }
+
+  &.electric{
+    background: yellow;
+  }
+
+  &.ice{
+    background: rgb(100, 206, 255);
+  }
+
+  &.fighting{
+    background: orangered;
+  }
+
+  &.ground{
+    background: linear-gradient(bottom, rgb(97, 97, 0) 50%, rgb(211, 211, 0) 50%);
+  }
+
+  &.flying{
+    background: linear-gradient(bottom, rgb(161, 161, 161) 50%, rgb(0, 217, 255) 50%);
+  }
+
+  &.psychic{
+    background: rgb(255, 105, 187);
+  }
+
+  &.bug{
+    background: rgb(47, 131, 72);
+  }
+
+  &.rock{
+    background:rgb(97, 97, 0);
+  }
+
+  &.ghost{
+    background: rgb(119, 3, 155);
+  }
+
+  &.dark{
+    background: rgb(59, 59, 59);
+  }
+
+  &.dragon{
+    background: linear-gradient(bottom, rgb(255, 102, 0) 50%, rgb(0, 153, 255) 50%);
+    color: white;
+  }
+
+  &.steel{
+    background: rgb(85, 103, 134);
+  }
+
+  &.fairy{
+    background: pink;
+  }
+}

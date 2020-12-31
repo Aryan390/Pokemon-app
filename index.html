@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeApp</title>
+  <link rel="stylesheet" href="./dist/css/main.min.css">
+  <script src="https://kit.fontawesome.com/cebedaac72.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="poke-banner">
+    <img src="./img/PngItem_24215.png" alt="pokemon_logo">
+  </div>
+  <form class="search-box" id="search-form">
+    <div class="autocomplete">
+      <input type="text" class="pokemon-input" id="pokemon-input" placeholder="Enter pokemon name">
+    </div>
+    <button class="search-btn" id="search-btn" type="submit"><i class="fas fa-search"></i></button>
+  </form>
+  <div class="container">
+    <div class="sorting-options">
+      <button class="btn" id="btn">
+        <span>Surprise!</span>
+        <div class="liquid"></div>
+      </button>
+      <select id="sort" class="sort">
+        <option value="a-z">Lowest Number first</option>
+        <option value="a-z">Highest Number first</option>
+        <option value="a-z">a-z</option>
+        <option value="a-z">z-a</option>
+      </select>
+    </div>
+    <div class="pokemon" id="pokemon">
+    </div>
+  </div>
+
+  <script src="./scripts/script.js"></script>
+</body>
+</html>
+
+
+<!-- <i class="fas fa-random"></i> -->
